@@ -1,11 +1,13 @@
 const bodyParser = require('body-parser');
 const express = require('express')
 const nodemailer= require('nodemailer')
+const cors = require('cors')
 
 const app = express();
 const PORT = 3000;
 
 app.use(bodyParser.json())
+app.use(cors)
 
 app.get("/", (req, res) => {
   res.send("Hello from Express!");
